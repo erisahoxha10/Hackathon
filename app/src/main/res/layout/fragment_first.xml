@@ -7,7 +7,6 @@
     tools:context=".FirstFragment">
 
 
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,227 +17,261 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-<!--        list with the types of massages-->
-            <TextView
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+        <!--        list with the types of massages-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select massage type"
+                        android:textAlignment="center"></TextView>
+                <RadioGroup
+                    android:id="@+id/massage_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/full_body"
+                        android:layout_width="120pt"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:paddingLeft="16pt"
+                        android:paddingTop="3pt"
+                        android:paddingRight="16pt"
+                        android:paddingBottom="3pt"
+                        android:text="Full body massage"
+                        android:textColor="@color/radio_flat_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/upper_back"
+                        android:layout_width="120pt"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:paddingLeft="16pt"
+                        android:paddingTop="3pt"
+                        android:paddingRight="16pt"
+                        android:paddingBottom="3pt"
+                        android:text="Upper back massage"
+                        android:textColor="@color/radio_flat_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/lower_back"
+                        android:layout_width="120pt"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:paddingLeft="16pt"
+                        android:paddingTop="3pt"
+                        android:paddingRight="16pt"
+                        android:paddingBottom="3pt"
+                        android:text="Lower back massage"
+                        android:textColor="@color/radio_flat_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/neck"
+                        android:layout_width="120pt"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:paddingLeft="16pt"
+                        android:paddingTop="3pt"
+                        android:paddingRight="16pt"
+                        android:paddingBottom="3pt"
+                        android:text="Neck massage"
+                        android:textColor="@color/radio_flat_text_selector" />
+                </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--        list of paces-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select pace"
+                        android:textAlignment="center"></TextView>
+
+                    <RadioGroup
+                        android:id="@+id/pace_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center_horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/intensive"
+                            android:layout_width="120pt"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent"
+                            android:paddingLeft="16pt"
+                            android:paddingTop="3pt"
+                            android:paddingRight="16pt"
+                            android:paddingBottom="3pt"
+                            android:text="Intensive"
+                            android:textColor="@color/radio_flat_text_selector" />
+
+                        <RadioButton
+                            android:id="@+id/medium"
+                            android:layout_width="120pt"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent"
+                            android:paddingLeft="16pt"
+                            android:paddingTop="3pt"
+                            android:paddingRight="16pt"
+                            android:paddingBottom="3pt"
+                            android:text="Medium"
+                            android:textColor="@color/radio_flat_text_selector" />
+
+                        <RadioButton
+                            android:id="@+id/calm"
+                            android:layout_width="120pt"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent"
+                            android:paddingLeft="16pt"
+                            android:paddingTop="3pt"
+                            android:paddingRight="16pt"
+                            android:paddingBottom="3pt"
+                            android:text="Calm"
+                            android:textColor="@color/radio_flat_text_selector" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--        list of times-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select time"
+                        android:textAlignment="center"></TextView>
+
+                    <RadioGroup
+                        android:id="@+id/time_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center_horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/time2"
+                            android:layout_width="120pt"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent"
+                            android:paddingLeft="16pt"
+                            android:paddingTop="3pt"
+                            android:paddingRight="16pt"
+                            android:paddingBottom="3pt"
+                            android:text="2 Minutes"
+                            android:textColor="@color/radio_flat_text_selector" />
+
+                        <RadioButton
+                            android:id="@+id/time5"
+                            android:layout_width="120pt"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent"
+                            android:paddingLeft="16pt"
+                            android:paddingTop="3pt"
+                            android:paddingRight="16pt"
+                            android:paddingBottom="3pt"
+                            android:text="5 Minutes"
+                            android:textColor="@color/radio_flat_text_selector" />
+
+                        <RadioButton
+                            android:id="@+id/time10"
+                            android:layout_width="120pt"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent"
+                            android:paddingLeft="16pt"
+                            android:paddingTop="3pt"
+                            android:paddingRight="16pt"
+                            android:paddingBottom="3pt"
+                            android:text="10 Minutes"
+                            android:textColor="@color/radio_flat_text_selector" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select massage type"
-                android:textAlignment="center"></TextView>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:gravity="center_horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+                android:orientation="horizontal"
+                android:gravity="center">
 
-            <RadioButton
-                android:id="@+id/full_body"
-                android:layout_width="120pt"
-                android:gravity="center"
+            <Button
+                android:id="@+id/bStart"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/radio_flat_selector"
-                android:button="@android:color/transparent"
-                android:paddingLeft="16pt"
-                android:paddingTop="3pt"
-                android:paddingRight="16pt"
-                android:paddingBottom="3pt"
-                android:text="Full body massage"
-                android:textColor="@color/radio_flat_text_selector" />
-
-            <RadioButton
-                android:id="@+id/upper_back"
-                android:layout_width="120pt"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:background="@drawable/radio_flat_selector"
-                android:button="@android:color/transparent"
-                android:paddingLeft="16pt"
-                android:paddingTop="3pt"
-                android:paddingRight="16pt"
-                android:paddingBottom="3pt"
-                android:text="Upper back massage"
-                android:textColor="@color/radio_flat_text_selector" />
-
-            <RadioButton
-                android:id="@+id/lower_back"
-                android:layout_width="120pt"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:background="@drawable/radio_flat_selector"
-                android:button="@android:color/transparent"
-                android:paddingLeft="16pt"
-                android:paddingTop="3pt"
-                android:paddingRight="16pt"
-                android:paddingBottom="3pt"
-                android:text="Lower back massage"
-                android:textColor="@color/radio_flat_text_selector" />
-
-            <RadioButton
-                android:id="@+id/neck"
-                android:layout_width="120pt"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:background="@drawable/radio_flat_selector"
-                android:button="@android:color/transparent"
-                android:paddingLeft="16pt"
-                android:paddingTop="3pt"
-                android:paddingRight="16pt"
-                android:paddingBottom="3pt"
-                android:text="Neck massage"
-                android:textColor="@color/radio_flat_text_selector" />
-        </RadioGroup>
+                android:padding="16dp"
+                android:text="Start massage"
+                android:background="@android:color/white"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:drawableLeft="@drawable/rsz_car_seat"
+                android:textSize="24sp"/>
+            </LinearLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!--        list of paces-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Select pace"
-                android:textAlignment="center"></TextView>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:gravity="center_horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RadioButton
-                    android:id="@+id/intensive"
-                    android:layout_width="120pt"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_flat_selector"
-                    android:button="@android:color/transparent"
-                    android:paddingLeft="16pt"
-                    android:paddingTop="3pt"
-                    android:paddingRight="16pt"
-                    android:paddingBottom="3pt"
-                    android:text="Intensive"
-                    android:textColor="@color/radio_flat_text_selector" />
-
-                <RadioButton
-                    android:id="@+id/medium"
-                    android:layout_width="120pt"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_flat_selector"
-                    android:button="@android:color/transparent"
-                    android:paddingLeft="16pt"
-                    android:paddingTop="3pt"
-                    android:paddingRight="16pt"
-                    android:paddingBottom="3pt"
-                    android:text="Medium"
-                    android:textColor="@color/radio_flat_text_selector" />
-
-                <RadioButton
-                    android:id="@+id/calm"
-                    android:layout_width="120pt"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_flat_selector"
-                    android:button="@android:color/transparent"
-                    android:paddingLeft="16pt"
-                    android:paddingTop="3pt"
-                    android:paddingRight="16pt"
-                    android:paddingBottom="3pt"
-                    android:text="Calm"
-                    android:textColor="@color/radio_flat_text_selector" />
-
-            </RadioGroup>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!--        list of times-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Select time"
-                android:textAlignment="center"></TextView>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:gravity="center_horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RadioButton
-                    android:id="@+id/time2"
-                    android:layout_width="120pt"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_flat_selector"
-                    android:button="@android:color/transparent"
-                    android:paddingLeft="16pt"
-                    android:paddingTop="3pt"
-                    android:paddingRight="16pt"
-                    android:paddingBottom="3pt"
-                    android:text="2 Minutes"
-                    android:textColor="@color/radio_flat_text_selector" />
-
-                <RadioButton
-                    android:id="@+id/time5"
-                    android:layout_width="120pt"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_flat_selector"
-                    android:button="@android:color/transparent"
-                    android:paddingLeft="16pt"
-                    android:paddingTop="3pt"
-                    android:paddingRight="16pt"
-                    android:paddingBottom="3pt"
-                    android:text="5 Minutes"
-                    android:textColor="@color/radio_flat_text_selector" />
-
-                <RadioButton
-                    android:id="@+id/time10"
-                    android:layout_width="120pt"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_flat_selector"
-                    android:button="@android:color/transparent"
-                    android:paddingLeft="16pt"
-                    android:paddingTop="3pt"
-                    android:paddingRight="16pt"
-                    android:paddingBottom="3pt"
-                    android:text="10 Minutes"
-                    android:textColor="@color/radio_flat_text_selector" />
-
-            </RadioGroup>
-        </LinearLayout>
-
 
         <ImageView
             android:id="@+id/simpleImageView"
