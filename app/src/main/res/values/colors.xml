@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bubble_blue">#C6E5F7</color>
+    <color name="bubble_red">#ED96A7</color>
+    <color name="car_seat_color">#84879C</color>
 </resources>

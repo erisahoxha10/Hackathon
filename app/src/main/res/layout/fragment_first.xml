@@ -258,11 +258,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_margin="35dp"
                 android:gravity="center">
 
             <Button
                 android:id="@+id/bStart"
-                android:layout_width="wrap_content"
+                android:layout_width="500dp"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="Start massage"
@@ -270,7 +271,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:drawableLeft="@drawable/rsz_car_seat"
-                android:textSize="24sp"/>
+                android:textSize="40sp"/>
             </LinearLayout>
 
         </LinearLayout>
