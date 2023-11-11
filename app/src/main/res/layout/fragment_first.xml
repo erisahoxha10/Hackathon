@@ -134,8 +134,9 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
+
                         <RadioButton
-                            android:id="@+id/intensive"
+                            android:id="@+id/calm"
                             android:layout_width="120pt"
                             android:gravity="center"
                             android:layout_height="wrap_content"
@@ -145,7 +146,7 @@
                             android:paddingTop="3pt"
                             android:paddingRight="16pt"
                             android:paddingBottom="3pt"
-                            android:text="Intensive"
+                            android:text="Calm"
                             android:textColor="@color/radio_flat_text_selector" />
 
                         <RadioButton
@@ -163,7 +164,7 @@
                             android:textColor="@color/radio_flat_text_selector" />
 
                         <RadioButton
-                            android:id="@+id/calm"
+                            android:id="@+id/intensive"
                             android:layout_width="120pt"
                             android:gravity="center"
                             android:layout_height="wrap_content"
@@ -173,8 +174,9 @@
                             android:paddingTop="3pt"
                             android:paddingRight="16pt"
                             android:paddingBottom="3pt"
-                            android:text="Calm"
+                            android:text="Intensive"
                             android:textColor="@color/radio_flat_text_selector" />
+
 
                     </RadioGroup>
                 </LinearLayout>
@@ -274,10 +276,10 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/simpleImageView"
+            android:id="@+id/carSeatImageView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/car_seat"
+            android:src="@drawable/car_seat_full_blue"
             android:scaleType="fitStart"/>
     </LinearLayout>
 

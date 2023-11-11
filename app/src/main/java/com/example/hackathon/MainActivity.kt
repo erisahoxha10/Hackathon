@@ -1,5 +1,8 @@
 package com.example.hackathon
 
+import android.car.Car
+import android.car.VehicleAreaType
+import android.car.hardware.property.CarPropertyManager
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
@@ -17,9 +20,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var carPropertyManager: CarPropertyManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        carPropertyManager = Car.createCar(this).getCarManager(Car.PROPERTY_SERVICE) as CarPropertyManager
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -35,12 +40,15 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-        findViewById<RadioButton>(R.id.full_body).setOnCheckedChangeListener { buttonView, isChecked ->
-            Log.d("RADIO", "full_body is checked: $isChecked")
-        }
-
-        findViewById<RadioButton>(R.id.upper_back).setOnCheckedChangeListener { buttonView, isChecked ->
-            Log.d("RADIO", "upper_back is checked: $isChecked")
+        findViewById<RadioGroup>(R.id.massage_type).setOnCheckedChangeListener { _, id ->
+            val imageDrawable = when (id) {
+                R.id.full_body -> R.drawable.car_seat_full_body
+                R.id.upper_back -> R.drawable.car_seat_upper_back
+                R.id.lower_back -> R.drawable.car_seat_lower_back
+                R.id.neck -> R.drawable.car_seat_neck
+                else -> R.drawable.car_seat_full_blue
+            }
+            findViewById<ImageView>(R.id.carSeatImageView).setImageResource(imageDrawable)
         }
 
         // when clicking the button, the request is made
@@ -48,30 +56,46 @@ class MainActivity : AppCompatActivity() {
 
 //            to start the massage, the three radio button groups should be checked
 //            massage type
-            var typeId = findViewById<RadioGroup>(R.id.massage_type).checkedRadioButtonId
+            var typeGroup = findViewById<RadioGroup>(R.id.massage_type)
+            var selectedType = typeGroup.checkedRadioButtonId
+            var type_index = typeGroup.indexOfChild(findViewById(selectedType))
 
 //            pace
-            var paceId = findViewById<RadioGroup>(R.id.pace_group).checkedRadioButtonId
+            var paceGroup = findViewById<RadioGroup>(R.id.pace_group)
+            var paceSelected = paceGroup.checkedRadioButtonId
+            var pace_index = paceGroup.indexOfChild(findViewById(paceSelected))
 
 //            time
             var timeId = findViewById<RadioGroup>(R.id.time_group).checkedRadioButtonId
-            if(typeId != -1 && paceId != -1 && timeId != -1) {
-                // find the radiobutton by returned id
-                var type: RadioButton = findViewById(typeId)
+
+            var timeGroup = findViewById<RadioGroup>(R.id.time_group)
+            var timeSelected = timeGroup.checkedRadioButtonId
+            var time_index = timeGroup.indexOfChild(findViewById(timeSelected))
+
+            if(type_index != -1 && pace_index != -1 && time_index != -1) {
+
 
                 Log.d(
                     "MASSAGE TYPE: ",
-                    "This type is selected: ${type.text}"
+                    "This type index is selected: ${type_index}"
                 )
                 Log.d(
                     "MASSAGE PACE: ",
-                    " pace selected: ${paceId}"
+                    " pace selected index: ${pace_index}"
                 )
 
                 Log.d(
                     "TIME:",
-                    "Time selected: ${timeId}"
+                    "Time selected index: ${time_index}"
                 )
+
+                val message = (((type_index shl 8) + pace_index shl 8) + time_index)
+
+                try {
+                    carPropertyManager.setIntProperty(0, VehicleAreaType.VEHICLE_AREA_TYPE_GLOBAL, message)
+                } catch (e: Exception) {
+                    Toast.makeText(this, "Error setting property", Toast.LENGTH_SHORT).show()
+                }
             }
 
             Log.d("RADIO", "Button is clicked")
