@@ -4,8 +4,8 @@
     <!-- Strings used for fragments for navigation -->
     <string name="main_page">Intelligent Car Seat</string>
     <string name="second_page">Create you own custom massage</string>
-    <string name="next">Next</string>
-    <string name="save">Save changes</string>
+    <string name="custom">Create custom massage</string>
+    <string name="save">Start custom massage</string>
 
     <string name="intelligent_car_seat">Intelligent Car Seat</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>

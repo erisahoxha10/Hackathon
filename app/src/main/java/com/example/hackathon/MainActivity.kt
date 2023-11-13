@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 try {
                     carPropertyManager.setIntProperty(0, VehicleAreaType.VEHICLE_AREA_TYPE_GLOBAL, message)
                 } catch (e: Exception) {
-                    Toast.makeText(this, "Error setting property", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Please tie your hair", Toast.LENGTH_SHORT).show()
                 }
             }
 
